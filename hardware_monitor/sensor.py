@@ -2,7 +2,8 @@ import aiohttp
 import asyncio
 import logging
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
+from homeassistant.util import dt as dt_util
 from typing import Optional, List, Dict, Any
 from dataclasses import dataclass
 
@@ -112,9 +113,8 @@ async def async_setup_entry(
         _LOGGER,
         name="hardware_monitor",
         update_method=async_update_data,
-        update_interval=timedelta(seconds=5),
+        update_interval=dt_util.parse_duration("00:00:03"),  # 手动构造时间间隔
     )
-
     await coordinator.async_config_entry_first_refresh()
 
     sensors = []
