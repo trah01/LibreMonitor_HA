@@ -1,0 +1,13 @@
+{
+  "domain": "hardware_monitor",
+  "name": "Hardware Monitor",
+  "version": "1.0",
+  "config_flow": true,
+  "documentation": "https://example.com",
+  "requirements": [],
+  "codeowners": ["@trah01"],
+  "dependencies": [],
+  "capability_classes": {
+    "sensor": "sensor.py"
+  }
+}
